@@ -33,10 +33,10 @@ resource "azurerm_key_vault" "main" {
   sku_name            = "standard"
 
   # Security hardening
-  enable_rbac_authorization       = true
-  purge_protection_enabled        = true
-  soft_delete_retention_days      = 90
-  public_network_access_enabled   = false
+  enable_rbac_authorization     = true
+  purge_protection_enabled      = true
+  soft_delete_retention_days    = 90
+  public_network_access_enabled = false
 
   network_acls {
     bypass         = "AzureServices"
