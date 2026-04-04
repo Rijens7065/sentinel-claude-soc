@@ -1,0 +1,33 @@
+# Terraform
+*.tfvars
+!*.tfvars.example
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+local.settings.json
+!local.settings.json.example
+
+# Secrets and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+.azure/
+
+# OS
+.DS_Store
+Thumbs.db
