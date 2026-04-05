@@ -19,13 +19,8 @@ resource "azurerm_sentinel_log_analytics_workspace_onboarding" "main" {
 }
 
 # ─── Sentinel Data Connectors ─────────────────────────────────────────────────
-
-resource "azurerm_sentinel_data_connector_microsoft_threat_protection" "defender_xdr" {
-  name                       = "MicrosoftThreatProtection"
-  log_analytics_workspace_id = azurerm_sentinel_log_analytics_workspace_onboarding.main.workspace_id
-}
-
-resource "azurerm_sentinel_data_connector_azure_security_center" "security_incidents" {
-  name                       = "AzureSecurityCenter"
-  log_analytics_workspace_id = azurerm_sentinel_log_analytics_workspace_onboarding.main.workspace_id
-}
+# Defender XDR and Azure Security Center connectors are managed natively
+# by Azure (auto-enabled on Sentinel onboarding). They are NOT managed by
+# Terraform due to internal kind mismatches in the azurerm provider.
+# Enable/configure these connectors in the Azure Portal:
+#   Sentinel → Configuration → Data connectors
