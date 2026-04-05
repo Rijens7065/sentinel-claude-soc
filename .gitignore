@@ -28,6 +28,10 @@ local.settings.json
 *.pfx
 .azure/
 
+# Claude Code instructions (local only)
+CLAUDE.md
+VSCODE_PROMPT.md
+
 # OS
 .DS_Store
 Thumbs.db
