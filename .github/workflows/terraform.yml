@@ -102,12 +102,12 @@ jobs:
         id: plan
         working-directory: ${{ env.TF_WORKING_DIR }}
         run: |
+          set -o pipefail
           terraform plan \
             -var="subscription_id=$ARM_SUBSCRIPTION_ID" \
             -var="tenant_id=$ARM_TENANT_ID" \
             -compact-warnings \
             -out=tfplan.binary 2>&1 | tee plan.txt
-          echo "exitcode=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
 
       - name: Convert plan to readable format
         working-directory: ${{ env.TF_WORKING_DIR }}
