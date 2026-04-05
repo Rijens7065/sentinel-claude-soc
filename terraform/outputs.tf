@@ -32,3 +32,18 @@ output "subnet_private_endpoints_id" {
   description = "ID of the Private Endpoints subnet"
   value       = module.networking.subnet_private_endpoints_id
 }
+
+output "law_workspace_id" {
+  description = "Workspace ID of the Log Analytics Workspace"
+  value       = module.sentinel.law_workspace_id
+}
+
+output "eventhub_namespace_name" {
+  description = "Name of the Event Hub Namespace"
+  value       = module.eventhub.namespace_name
+}
+
+output "application_insights_name" {
+  description = "Name of the Application Insights instance"
+  value       = azurerm_application_insights.main.name
+}
