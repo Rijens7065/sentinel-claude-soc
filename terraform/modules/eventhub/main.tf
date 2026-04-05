@@ -17,17 +17,15 @@ resource "azurerm_eventhub_namespace" "main" {
 # ─── Event Hubs ────────────────────────────────────────────────────────────────
 
 resource "azurerm_eventhub" "incidents" {
-  name                = "incidents"
-  namespace_name      = azurerm_eventhub_namespace.main.name
-  resource_group_name = var.resource_group_name
-  partition_count     = var.partition_count
-  message_retention   = 1
+  name              = "incidents"
+  namespace_id      = azurerm_eventhub_namespace.main.id
+  partition_count   = var.partition_count
+  message_retention = 1
 }
 
 resource "azurerm_eventhub" "alerts" {
-  name                = "alerts"
-  namespace_name      = azurerm_eventhub_namespace.main.name
-  resource_group_name = var.resource_group_name
-  partition_count     = var.partition_count
-  message_retention   = 1
+  name              = "alerts"
+  namespace_id      = azurerm_eventhub_namespace.main.id
+  partition_count   = var.partition_count
+  message_retention = 1
 }
